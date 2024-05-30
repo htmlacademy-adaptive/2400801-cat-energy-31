@@ -1,0 +1,30 @@
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include font($secondary-font, 14px, 20px, 400, uppercase, $title-color-text);
+}
+
+.price__definition {
+  margin: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .price {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 9px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .price {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 62px;
+  }
+}

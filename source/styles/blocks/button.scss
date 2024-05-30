@@ -1,0 +1,39 @@
+.button {
+  padding: 10px;
+
+  @include font($secondary-font, 16px, 20px, 400, uppercase, $title-light-color-text);
+  font-family: $secondary-font;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $bright-background-color;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5eaa2f;
+  }
+
+  &:active {
+    background-color: #5eaa2f;
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.button--tall {
+  padding: 15px;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.button--secondary {
+  color: #444444;
+  background-color: $soft-background-color;
+
+  &:hover,
+  &:active {
+    background-color: #ebebeb;
+    color: inherit;
+  }
+}

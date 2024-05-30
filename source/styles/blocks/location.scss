@@ -1,0 +1,100 @@
+.location--catalog {
+  background-color: $soft-background-color;
+}
+
+.location__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 20px;
+}
+
+.location__slogan {
+  margin: 0;
+  padding-right: 5px;
+
+  @include font($secondary-font, 16px, 20px, 400, uppercase, #111111);
+}
+
+.location__address {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  line-height: 20px;
+}
+
+.location__map {
+  height: 362px;
+  background-image:
+    image-set(url("../../images/map-background-mobile@1x.jpg") type("image/jpg") 1x,
+    url("../../images/map-background-mobile@2x.jpg") type("image/jpg") 2x);
+  background-repeat: no-repeat;
+  background-size: 320px 362px;
+  background-position: center;
+}
+
+@media (min-width: $tablet-width) {
+  .location__wrapper {
+    gap: 300px;
+    padding: 60px 70px;
+  }
+
+  .location__slogan {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .location__address {
+    gap: 20px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .location__map {
+    min-height: 400px;
+    background-image:
+      image-set(
+        url("../../images/map-background-tablet@1x.webp") type("image/webp") 1x,
+        url("../../images/map-background-tablet@2x.webp") type("image/webp") 2x,
+        url("../../images/map-background-tablet@1x.jpg") type("image/jpg") 1x,
+        url("../../images/map-background-tablet@2x.jpg") type("image/jpg") 2x);
+    background-size: $tablet-width 400px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .location {
+    display: grid;
+    grid-template-columns: calc(50% - 45px) 45px 50%;
+    grid-template-rows: 95px auto 106px;
+  }
+
+  .location__wrapper {
+    width: 565px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: end;
+    z-index: 1;
+
+    gap: 87px;
+    padding: 60px 80px;
+
+    background-color: $base-background-color;
+  }
+
+  .location__address {
+    text-align: left;
+  }
+
+  .location__map {
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    min-height: 100%;
+
+    background-image:
+      image-set(url("../../images/map-background-desktop@1x.jpg") type("image/jpg") 1x,
+      url("../../images/map-background-desktop@2x.jpg") type("image/jpg") 2x);
+    background-size: $desktop-width 400px;
+  }
+}

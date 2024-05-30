@@ -1,0 +1,21 @@
+.main-navigation__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .main-navigation__list {
+    flex-flow: row wrap;
+    gap: 33px;
+    margin-right: 5px;
+    max-width: 450px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-navigation__list {
+    max-width: 40vw;
+  }
+}
